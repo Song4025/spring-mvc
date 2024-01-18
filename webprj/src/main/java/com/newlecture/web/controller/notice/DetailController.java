@@ -13,7 +13,7 @@ public class DetailController implements Controller{
 
 		System.out.println("DetailController입니당");
 		
-		ModelAndView mv = new ModelAndView("notice/detail");
+		ModelAndView mv = new ModelAndView("notice.detail");
 		
 		return mv;
 		
