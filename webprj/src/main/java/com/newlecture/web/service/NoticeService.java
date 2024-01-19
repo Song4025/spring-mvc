@@ -1,56 +1,16 @@
 package com.newlecture.web.service;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import com.newlecture.web.entity.Notice;
 
-public class NoticeService {
+public interface NoticeService {
 
-    public List<Notice> getList(int i, String string, String string2) throws ClassNotFoundException, SQLException{
-
-    String url = "jdbc:oracle:thin:@localhost:1521/xe";
-    String sql = "SELECT * FROM NOTICE";
-
-    // JDBC 드라이버 로드
-    Class.forName("oracle.jdbc.driver.OracleDriver");
-    Connection con = DriverManager.getConnection(url, "SONG", "gjgkgl135");
-    Statement st = con.createStatement();
-    ResultSet rs = st.executeQuery(sql);
-
-    List<Notice> list = new ArrayList<Notice>();
-    
-    while (rs.next()) {
-        int id = rs.getInt("ID");
-        String title = rs.getString("TITLE");
-        String writer_id = rs.getString("WRITER_ID");
-        Date regdate = rs.getDate("REGDATE");
-        String content = rs.getString("CONTENT");
-        int hit = rs.getInt("HIT");
-
-        Notice notice = new Notice(
-        		id,
-        		title,
-        		writer_id,
-        		regdate,
-        		content,
-        		hit
-        		);
-        
-        list.add(notice);
-    }
-
-    rs.close();
-    st.close();
-    con.close();
-    
-    return list;
-
-    }
+	List<Notice> getList(int page, String field, String query) throws ClassNotFoundException, SQLException;
+	int getCount() throws ClassNotFoundException, SQLException;
+	int insert(Notice notice) throws ClassNotFoundException, SQLException;
+	int update(Notice notice) throws ClassNotFoundException, SQLException;
+	int delete(Notice id) throws ClassNotFoundException, SQLException;
+	
 }
