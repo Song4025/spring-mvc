@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	
 
-<main class="main" style="overflow-y:scroll; max-height:75vh; font-size:12px;">
+<main class="main" style="overflow-y:scroll; overflow-x:hidden; max-height:75vh;">
 	<h2 class="main title">공지사항</h2>
 
 	<div class="breadcrumb">
@@ -30,7 +30,7 @@
 
 	<div class="notice margin-top">
 		<h3 class="hidden">공지사항 목록</h3>
-		<table class="table">
+		<table class="table" style="font-size:12px;">
 			<thead>
 				<tr>
 					<th class="w60">번호</th>

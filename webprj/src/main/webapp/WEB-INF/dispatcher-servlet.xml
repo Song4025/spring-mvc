@@ -42,6 +42,15 @@
 
 	<mvc:resources location="/static/" mapping="/**"></mvc:resources>
 	
-	<bean id="noticeService" class="com.newlecture.web.service.jdbc.JDBCNoticeService" />
+	<bean id="noticeService" class="com.newlecture.web.service.jdbc.JDBCNoticeService" >
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>	
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521/xe"></property>	
+		<property name="username" value="SONG"></property>	
+		<property name="password" value="gjgkgl135"></property>	
+	</bean>
 
 </beans>
