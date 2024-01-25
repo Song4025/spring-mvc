@@ -10,7 +10,7 @@ public class Notice {
 	private String content;
 	private int hit;
 	
-	public Notice() {
+	public Notice(int id, String title, String writer_id, Date regDate, String content, int hit, String files) {
 	}
 
 	//	매개변수로 들어감
