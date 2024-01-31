@@ -3,18 +3,18 @@ package com.newlecture.web.entity;
 import java.util.Date;
 
 public class Notice {
-	private int id;
+	private String id;
 	private String title;
 	private String writer_id;
 	private Date regDate;
 	private String content;
 	private int hit;
 	
-	public Notice(int id, String title, String writer_id, Date regDate, String content, int hit, String files) {
+	public Notice(String id, String title, String writer_id, Date regDate, String content, int hit, String files) {
 	}
 
 	//	매개변수로 들어감
-	public Notice(int id, String title, String writer_id, Date regDate, String content, int hit) {
+	public Notice(String id, String title, String writer_id, Date regDate, String content, int hit) {
 		this.id = id;
 		this.title = title;
 		this.writer_id = writer_id;
@@ -22,11 +22,11 @@ public class Notice {
 		this.content = content;
 		this.hit = hit;
 	}
-	
-	public int getId() {
+
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getTitle() {
